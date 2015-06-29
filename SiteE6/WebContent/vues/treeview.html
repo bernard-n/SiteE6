@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exemple - treeview</title>
+	
+	<style type="text/css">
+		body{
+			margin:10px 30px;
+			font-family:verdana;
+			font-size:12px;
+		}
+		h1{
+			font-family:verdana;
+			font-size:14px;
+			font-weight:bold;
+			text-decoration:underline;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="styles/treeview.css" media="screen" /> 
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		$('div.tree div:has(div)').addClass('parent');
+		$('div.tree div').click(function() {
+			var o = $(this);
+			o.children('div').toggle();
+			o.filter('.parent').toggleClass('expanded');
+			return false;
+		});
+	});
+	</script>
+</head>
+<body>
+
+<h1>Exemple de mise en place d'un treeview</h1>
+
+
+<p>
+	<br />
+	<div class='tree' style='padding:10px; border:solid 1px #dedede;'>
+		<div>Cat�gorie 1
+			<div>Sous cat�gorie 1
+				<div>Texte �l�ment 1</div>
+				<div>Texte �l�ment 2</div>
+				<div>Texte �l�ment 3</div>
+			</div>
+			<div>Sous cat�gorie 2</div>
+			<div>Sous cat�gorie 3</div>
+		</div>
+		<div>Cat�gorie 2
+			<div>Sous cat�gorie 1</div>
+			<div>Sous cat�gorie 2
+				<div>Texte �l�ment 1</div>
+				<div>Texte �l�ment 2</div>
+				<div>Texte �l�ment 3</div>
+			</div>
+			<div>Sous cat�gorie 3</div>
+		</div>
+		<div>Cat�gorie 3
+			<div>Sous cat�gorie 1</div>
+			<div>Sous cat�gorie2</div>
+			<div>Sous cat�gorie 3
+				<div>Texte �l�ment 1</div>
+				<div>Texte �l�ment 2</div>
+				<div>Texte �l�ment 3</div>
+			</div>
+		</div>
+	</div>
+	<br />
+	<br />
+	<br />
+</p>
+
+
+</body>
+</html>
